@@ -9,7 +9,7 @@ def theme_callback(sender, data):
 with window("Primary"):
     with menu_bar("Main Menu Bar"):
         with menu("Home"):
-            add_menu_item("WorkSpace", callback=workspace)
+            add_menu_item("WorkSpace", callback=dataframes)
         with menu("Settings"):
             with menu("Themes"):
                 add_menu_item("Dark", callback=theme_callback)
@@ -30,8 +30,7 @@ with window("Primary"):
                 add_menu_item("logger", callback=lambda:show_logger())
                 add_menu_item("About", callback=lambda:show_about())
 
-    with window("Work Space", no_close=True):
-        add_text("Welcome to Work Space")
-        add_color_edit4("name1")
-
+    with window("Work Space", width=400, height=400, x_pos=0, y_pos=25, no_close=True):
+        add_text("Welcome to Work Space", bullet=True)
+        
 start_dearpygui(primary_window="Primary")
