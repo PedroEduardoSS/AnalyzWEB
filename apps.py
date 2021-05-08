@@ -2,11 +2,12 @@ from dearpygui.core import *
 from dearpygui.simple import * 
 
 def dataframes(sender, data):
-    with window("Table"):
+    with window("DataFrame"):
         with tab_bar("tabbar"):
-            with tab("help"):
-                add_text("Welcome test")
-                add_color_picker4("Picker 1")
-            with tab("Settings"):
-                add_text("Test")
-                add_radio_button("items", items=["item 1", "item 2", "item 3"])
+            with tab("Management ##dataframes"):
+                add_text("For now, It is okay", bullet=True)
+            with tab("Settings ##dataframes"):
+                add_text("Test", bullet=True)
+            with tab("Help ##dataframes"):
+                add_text("It is your place to create or manipulate dataframes", bullet=True)
+                add_text("You can use Series instead dataframes here", bullet=True)
