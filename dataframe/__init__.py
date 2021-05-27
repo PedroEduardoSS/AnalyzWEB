@@ -17,12 +17,12 @@ def dataframes(sender, data):
             with tab("Management ##dataframes"):
                 add_text("Create/manipulate dataframes here", bullet=True)
                 add_separator()
-                add_input_text("Column name", hint="col name1, col name2", tip="Each column name\nmust be separated by comma")
+                add_input_text("Column name", hint="col name1,col name2", tip="Each column name\nmust be separated by comma")
                 add_button("Add columns", callback=add_headers)
-                add_input_text("Row data", hint="row data1, rowdata2", tip="Each row data\nmust be separated by comma")
+                add_input_text("Row data", hint="data col1,data col2", tip="Each row data\nmust be separated by comma")
                 add_button("Add row", callback=add_rows)
                 add_button("tabledata", callback=lambda:print(get_table_data("Table")))
-                add_table("Table", ["c1", "c2", "c3"])
+                add_table("Table", ["col1", "col2", "col3"])
                 add_separator()
 
             with tab("Settings ##dataframes"):
