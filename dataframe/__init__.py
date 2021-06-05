@@ -41,16 +41,12 @@ def dataframes(sender, data):
             with tab("Manipulation ##dataframes"):
                 add_text("Manipulate dataframes here", bullet=True)
                 add_separator()
-                add_input_text("CSV file path")
+                add_input_text("CSV file path", hint="CSV-Files\File.csv")
                 add_button("Add CSV file", callback=add_csv_file)
                 add_table("Table ##manipulation", ["Wait", "Wait"], show=False)
-
-
-            with tab("Settings ##dataframes"):
-                add_text("Test", bullet=True)
             
             with tab("Help ##dataframes"):
                 add_text("It is your place to create or manipulate dataframes", bullet=True)
-                add_text("You can use Series instead dataframes here", bullet=True)
+                add_text("To open a CSV file on Manipulation tab,\n you must firstly add the csv file on 'CSV-Files'", bullet=True)
                 add_separator()
                 add_button("Close ##DataFrame", small=True, callback=lambda:delete_item("DataFrame"), tip="You must close the window here", label="Close Window")
