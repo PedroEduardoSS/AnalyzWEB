@@ -2,48 +2,41 @@ from dearpygui.core import *
 from dearpygui.simple import *
 import pandas as pd
 
-def add_rows_creation(sender, data):
-    row_datas = get_value("Row data ##creation")
+#Data tab
+def add_rows_data(sender, data):
+    row_datas = get_value("Row data ##data")
     row_data_list = row_datas.split(",")
-    add_row("Table ##creation", row_data_list)
+    add_row("Table ##data", row_data_list)
 
-def add_headers_creation(sender, data):
-    column_name = get_value("Column name ##creation")
+def add_headers_data(sender, data):
+    column_name = get_value("Column name ##data")
     columns_list = column_name.split(",")
-    set_headers("Table ##creation", columns_list)
+    set_headers("Table ##data", columns_list)
 
-def add_rows_manipulation(sender, data):
-    row_datas = get_value("Row data ##manipulation")
-    row_data_list = row_datas.split(",")
-    add_row("Table ##manipulation", row_data_list)
+def update_cell_data(sender, data):
+    coordinates = get_table_selections("Table ##data")
+    value = get_value("Cell data ##data")
+    for coord in coordinates:
+        set_table_item("Table ##data", coord[0], coord[1], value)
 
-def add_headers_manipulation(sender, data):
-    column_name = get_value("Column name ##manipulation")
-    columns_list = column_name.split(",")
-    set_headers("Table ##manipulation", columns_list)
-
+#csv file-handling
 def add_csv_file(sender, data):
     dataframe = pd.read_csv(get_value("CSV file path"))
     columns = dataframe.columns
     columns_list = []
     for column in columns:
         columns_list.append(column)
-    set_headers("Table ##manipulation", columns_list)
+    set_headers("Table ##data", columns_list)
 
     rows = dataframe.index
     for row in rows:
         id_row = dataframe.loc[row].to_list()
-        add_row("Table ##manipulation", id_row)
-    configure_item("Table ##manipulation", show=True)
+        add_row("Table ##data", id_row)
+    configure_item("Table ##data", show=True)
 
 #ATENTION
-def save_as_csv_creation(sender, data):
-    rows = get_table_data("Table ##creation")
-    data = pd.DataFrame(rows)
-    data.to_csv("CSV-Files\Sample1.csv", index=False)
-
-def save_as_csv_manipulation(sender, data):
-    rows = get_table_data("Table ##manipulation")
+def save_as_csv_data(sender, data):
+    rows = get_table_selections("Table ##data")
     data = pd.DataFrame(rows)
     data.to_csv("CSV-Files\Sample2.csv", index=False)
 
@@ -52,25 +45,7 @@ def save_as_csv_manipulation(sender, data):
 def dataframes(sender, data):
     with window("DataFrame", width=400, height=300, no_close=True):
         with tab_bar("tabbar ##dataframes"):
-            with tab("Creation ##dataframes"):
-                add_text("Create dataframes here", bullet=True)
-                add_separator()
-
-                add_text("Add the columns names below", bullet=True)
-                add_input_text("Column name ##creation", hint="col name1,col name2", tip="Each column name\nmust be separated by comma")
-                add_button("Add columns ##creation", callback=add_headers_creation)
-                add_spacing(count=5)
-
-                add_text("Add data for each cell of a row", bullet=True)
-                add_input_text("Row data ##creation", hint="data col1,data col2", tip="Each row data\nmust be separated by comma")
-                add_button("Add row ##creation", callback=add_rows_creation)
-                add_spacing(count=5)
-
-                add_text("ATTENTION! You can only save the tables data", bullet=True)
-                add_button("Save as CSV ##creation", callback=save_as_csv_creation)
-                add_table("Table ##creation", ["col1", "col2", "col3"])
-
-            with tab("Manipulation ##dataframes"):
+            with tab("Data ##dataframes"):
                 add_text("Manipulate dataframes here", bullet=True)
                 add_separator()
                 
@@ -80,18 +55,23 @@ def dataframes(sender, data):
                 add_spacing(count=5)
 
                 add_text("Add the columns names below", bullet=True)
-                add_input_text("Column name ##manipulation", hint="col name1,col name2", tip="Each column name\nmust be separated by comma")
-                add_button("Add columns ##manipulation", callback=add_headers_manipulation)
+                add_input_text("Column name ##data", hint="col name1,col name2", tip="Each column name\nmust be separated by comma")
+                add_button("Add columns ##data", callback=add_headers_data)
                 add_spacing(count=5)
                 
                 add_text("Add data for each cell of a row", bullet=True)
-                add_input_text("Row data ##manipulation", hint="data col1,data col2", tip="Each row data\nmust be separated by comma")
-                add_button("Add row ##manipulation", callback=add_rows_manipulation)
+                add_input_text("Row data ##data", hint="data col1,data col2", tip="Each row data\nmust be separated by comma")
+                add_button("Add row ##data", callback=add_rows_data)
+                add_spacing(count=5)
+
+                add_text("Update the data from a specific cell", bullet=True)
+                add_input_text("Cell data ##data", hint="data col1,data col2", tip="Each row data\nmust be separated by comma")
+                add_button("Update data ##data", callback=update_cell_data)
                 add_spacing(count=5)
                 
                 add_text("ATTENTION! You can only save the tables data", bullet=True)
-                add_button("Save as CSV ##manipulation", callback=save_as_csv_manipulation)
-                add_table("Table ##manipulation", ["Wait", "Wait"], show=False)
+                add_button("Save as CSV ##data", callback=save_as_csv_data)
+                add_table("Table ##data", ["Wait", "Wait"], show=False)
             
             with tab("Help ##dataframes"):
                 add_text("It is your place to create or manipulate dataframes", bullet=True)
