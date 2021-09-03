@@ -1,12 +1,25 @@
+'''
+Project: AnalyzOS
+Author: Pedro Eduardo
+
+File summary:
+1 - Imported libraries
+
+2 - theme_callback(): sets the aplication theme
+
+3 - Main Window
+
+4 - Main Function
+'''
+
 from dearpygui.simple import * 
 from dearpygui.core import *
 from dataframe import *
 
-#Main menu bar -> Themes
 def theme_callback(sender, data):
     set_theme(sender)
     
-with window("Work Space", width=1000, height=700, x_pos=0, y_pos=0, no_close=True):
+with window("Main Window", width=1000, height=700, x_pos=0, y_pos=0, no_close=True):
     with menu_bar("Main Menu Bar"):
         with menu("DS Tools"):
             add_menu_item("DataFrames", callback=dataframes)
