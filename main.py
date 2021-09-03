@@ -33,5 +33,6 @@ with window("Work Space", width=1000, height=700, x_pos=0, y_pos=0, no_close=Tru
     add_text("Welcome to Work Space", bullet=True)
     add_text("Use this space to manage your work", bullet=True)
     add_separator()
-    
-start_dearpygui(primary_window="Work Space")
+
+if __name__ == "__main__":
+    start_dearpygui(primary_window="Work Space")
