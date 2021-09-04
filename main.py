@@ -21,8 +21,7 @@ def theme_callback(sender, data):
     
 with window("Main Window", width=1000, height=700, x_pos=0, y_pos=0, no_close=True):
     with menu_bar("Main Menu Bar"):
-        with menu("DS Tools"):
-            add_menu_item("DataFrames", callback=dataframes)
+        add_menu_item("DataFrames", callback=dataframes)
         with menu("Settings"):
             with menu("Themes"):
                 add_menu_item("Dark", callback=theme_callback)
@@ -48,4 +47,4 @@ with window("Main Window", width=1000, height=700, x_pos=0, y_pos=0, no_close=Tr
     add_separator()
 
 if __name__ == "__main__":
-    start_dearpygui(primary_window="Work Space")
+    start_dearpygui(primary_window="Main Window")
