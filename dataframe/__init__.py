@@ -3,15 +3,27 @@ from dearpygui.simple import *
 import pandas as pd
 
 #Handling tab
-def add_rows_data(sender, data):
-    row_datas = get_value("Row data ##handling")
-    row_data_list = row_datas.split(",")
-    add_row("Table ##handling", row_data_list)
-
 def add_headers_data(sender, data):
     column_name = get_value("Column name ##handling")
-    columns_list = column_name.split(",")
-    set_headers("Table ##handling", columns_list)
+    column_index = get_value("Column index ##handling")
+    column_datas = get_value("Column values").split(",")
+    insert_column("Table ##handling", column_index, column_name, column_datas)
+
+def update_headers_data(sender, data):
+    columns = get_value("Columns ##handling").split(",")
+    set_headers("Table ##handling", columns)
+
+def remove_column(sender, data):
+    column_index = get_value("Column index")
+    delete_column("Table ##handling", column_index)
+
+def add_row_datas(sender, data):
+    row_datas = get_value("Row data ##handling").split(",")
+    add_row("Table ##handling", row_datas)
+
+def remove_row(sender, data):
+    row_index = get_value("Row index ##handling")
+    delete_row("Table ##handling", row_index)
 
 def update_cell_data(sender, data):
     coordinates = get_table_selections("Table ##handling")
@@ -65,12 +77,29 @@ def dataframes(sender, data):
 
                 add_text("Add the columns names below", bullet=True)
                 add_input_text("Column name ##handling", hint="col name1,col name2", tip="Each column name\nmust be separated by comma")
-                add_button("Add columns ##handling", callback=add_headers_data)
+                add_input_int("Column index ##handling")
+                add_input_text("Column values")
+                add_button("Add column ##handling", callback=add_headers_data)
+                add_spacing(count=5)
+
+                add_text("Update the columns names below", bullet=True)
+                add_input_text("Columns ##handling", hint="col name1,col name2", tip="Each column name\nmust be separated by comma")
+                add_button("Update columns ##handling", callback=update_headers_data)
+                add_spacing(count=5)
+
+                add_text("Delete the column", bullet=True)
+                add_input_int("Column index")
+                add_button("Delete column ##handling", callback=remove_column)
                 add_spacing(count=5)
                 
                 add_text("Add data for each cell of a row", bullet=True)
-                add_input_text("Row data ##data", hint="data col1,data col2", tip="Each row data\nmust be separated by comma")
-                add_button("Add row ##data", callback=add_rows_data)
+                add_input_text("Row data ##handling", hint="data col1,data col2", tip="Each row data\nmust be separated by comma")
+                add_button("Add row ##handling", callback=add_row_datas)
+                add_spacing(count=5)
+
+                add_text("Remove row", bullet=True)
+                add_input_int("Row index ##handling")
+                add_button("Remove row ##handling", callback=remove_row)
                 add_spacing(count=5)
 
                 add_text("Update the data from a specific cell", bullet=True)
