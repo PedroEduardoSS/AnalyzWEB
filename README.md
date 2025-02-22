@@ -4,12 +4,12 @@ AnalyzWEB is a simple WEB for data scientists, analysts or anyone who studies or
 
 ## Technologies behind
 
-uv (Project Management)
-Python
-Streamlit
-Scikit-learn
-Pandas
-Numpy
+- uv (Project Management)
+- Python
+- Streamlit
+- Scikit-learn
+- Pandas
+- Numpy
 
 ## Important commands
 
@@ -18,6 +18,7 @@ Numpy
 Create virtual env: `uv venv`
 
 Activate virtual env on Linux and MacOS: `source .venv/bin/activate`
+
 Activate virtual env on Windows: `.venv\Scripts\activate.ps1` or `.venv\Scripts\activate.bat`
 
 Deactivate virtual env: `deactivate`
