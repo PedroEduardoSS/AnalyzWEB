@@ -16,41 +16,65 @@ charset-normalizer==3.4.1
     # via requests
 click==8.1.8
     # via streamlit
+contourpy==1.3.1
+    # via matplotlib
+cycler==0.12.1
+    # via matplotlib
+fonttools==4.56.0
+    # via matplotlib
 gitdb==4.0.12
     # via gitpython
 gitpython==3.1.44
     # via streamlit
 idna==3.10
     # via requests
+iniconfig==2.0.0
+    # via pytest
 jinja2==3.1.5
     # via
     #   altair
     #   pydeck
+joblib==1.4.2
+    # via scikit-learn
 jsonschema==4.23.0
     # via altair
 jsonschema-specifications==2024.10.1
     # via jsonschema
+kiwisolver==1.4.8
+    # via matplotlib
 markdown-it-py==3.0.0
     # via rich
 markupsafe==3.0.2
     # via jinja2
+matplotlib==3.10.0
+    # via analyzweb (pyproject.toml)
 mdurl==0.1.2
     # via markdown-it-py
 narwhals==1.27.1
     # via altair
 numpy==2.2.3
     # via
+    #   contourpy
+    #   matplotlib
     #   pandas
     #   pydeck
+    #   scikit-learn
+    #   scipy
     #   streamlit
 packaging==24.2
     # via
     #   altair
+    #   matplotlib
+    #   pytest
     #   streamlit
 pandas==2.2.3
     # via streamlit
 pillow==11.1.0
-    # via streamlit
+    # via
+    #   matplotlib
+    #   streamlit
+pluggy==1.5.0
+    # via pytest
 protobuf==5.29.3
     # via streamlit
 pyarrow==19.0.1
@@ -59,8 +83,14 @@ pydeck==0.9.1
     # via streamlit
 pygments==2.19.1
     # via rich
+pyparsing==3.2.1
+    # via matplotlib
+pytest==8.3.4
+    # via analyzweb (pyproject.toml)
 python-dateutil==2.9.0.post0
-    # via pandas
+    # via
+    #   matplotlib
+    #   pandas
 pytz==2025.1
     # via pandas
 referencing==0.36.2
@@ -75,6 +105,10 @@ rpds-py==0.23.1
     # via
     #   jsonschema
     #   referencing
+scikit-learn==1.6.1
+    # via analyzweb (pyproject.toml)
+scipy==1.15.2
+    # via scikit-learn
 six==1.17.0
     # via python-dateutil
 smmap==5.0.2
@@ -83,6 +117,8 @@ streamlit==1.42.2
     # via analyzweb (pyproject.toml)
 tenacity==9.0.0
     # via streamlit
+threadpoolctl==3.5.0
+    # via scikit-learn
 toml==0.10.2
     # via streamlit
 tornado==6.4.2
