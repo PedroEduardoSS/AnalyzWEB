@@ -13,7 +13,10 @@ AnalyzWEB is a simple WEB for data scientists, analysts or anyone who studies or
 
 ## Important commands
 
-### UV
+### Prerequisite
+
+You need install UV package manager to work on the projets.
+See the official [UV Documentation](https://docs.astral.sh/uv/getting-started/)
 
 Create virtual env: `uv venv`
 
@@ -25,14 +28,10 @@ Deactivate virtual env: `deactivate`
 
 Add dependencies: `uv add <dependency_name>`
 
-To lock dependencies declared in a pyproject.toml: `uv pip compile pyproject.toml -o requirements.txt`
-
-Sync virtual env with requirements.txt: `uv pip sync requirements.txt`
-
-[UV Documentation](https://docs.astral.sh/uv/getting-started/)
-
-### Streamlit
-
 Run streamlit: `uv run streamlit run app.py`
+
+## Documentations
+
+Here are some docs of technologies behind the project
 
 [Streamlit Documentation](https://docs.streamlit.io/get-started/installation/command-line#install-streamlit-in-your-environment)
