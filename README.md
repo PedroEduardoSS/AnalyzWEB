@@ -28,7 +28,7 @@ Deactivate virtual env: `deactivate`
 
 Add dependencies: `uv add <dependency_name>`
 
-Run streamlit: `uv run streamlit run app.py`
+Run streamlit: `uv run streamlit run home.py`
 
 ## Documentations
 
