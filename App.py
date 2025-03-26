@@ -4,13 +4,7 @@ from views.data_analysis_tab import *
 
 st.title("Data Analysis workplace")
 
-tab1, tab2, tab3 = st.tabs(["Data Analysis", "Machine Learning", "Scraping"])
+tab1 = st.tabs(["Data Analysis"])
 
 with tab1:
     data_analysis_tab()
-
-with tab2:
-    pass
-
-with tab3:
-    pass
