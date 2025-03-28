@@ -13,3 +13,8 @@ def data_analysis_tab():
         df = st.data_editor(dataframe, num_rows="dynamic")
         st.button("Describe data", on_click=lambda: describe_place.write(data_analysis_controller.describe(df)))
         describe_place = st.container()
+
+        st.area_chart(df)
+        st.bar_chart(df)
+        st.line_chart(df)
+        st.scatter_chart(df)
