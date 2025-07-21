@@ -1,6 +1,6 @@
 # AnalyzWEB
 
-AnalyzWEB is a simple WEB for data scientists, analysts or anyone who studies or work with Data Science.
+AnalyzWEB is a set of tools based on Streamlit for data scientists, analysts or anyone who studies or work with Data Science.
 
 ## Technologies behind
 
@@ -19,6 +19,8 @@ You need install UV package manager to work on the projets.
 See the official [UV Documentation](https://docs.astral.sh/uv/getting-started/)
 
 Create virtual env: `uv venv`
+
+Run the command to sync the pyproject.toml to the venv: `uv sync`
 
 Activate virtual env on Linux and MacOS: `source .venv/bin/activate`
 
