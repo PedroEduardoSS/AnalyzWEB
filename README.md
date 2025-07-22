@@ -1,12 +1,13 @@
 # AnalyzWEB
 
-AnalyzWEB is a set of tools based on Streamlit for data scientists, analysts or anyone who studies or work with Data Science.
+AnalyzWEB is a set of tools based on Streamlit and NiceGUI for data scientists, analysts or anyone who studies or work with Data Science.
 
 ## Technologies behind
 
 - uv (Project Management)
 - Python
 - Streamlit
+- NiceGUI
 - Scikit-learn
 - Pandas
 - Numpy
