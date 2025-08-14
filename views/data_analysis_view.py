@@ -4,7 +4,7 @@ from components.data_analysis import *
 
 data_analysis_component = DataAnalysis()
 
-def data_analysis_tab():
+def data_analysis_view():
     ui.html("<h1>Data</h1>").classes('text-lg')
 
     with ui.column(align_items="center").classes('w-full'):
