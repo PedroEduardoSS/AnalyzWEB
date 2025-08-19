@@ -1,5 +1,7 @@
 # AnalyzWEB
 
+![](/assets/Analyzweb-logo.jpeg)
+
 AnalyzWEB is a set of tools based on Streamlit and NiceGUI for data scientists, analysts or anyone who studies or work with Data Science.
 
 ## Technologies behind
@@ -31,10 +33,12 @@ Deactivate virtual env: `deactivate`
 
 Add dependencies: `uv add <dependency_name>`
 
-Run streamlit: `uv run streamlit run App.py`
+Run the app: `uv run main.py`
 
 ## Documentations
 
 Here are some docs of technologies behind the project
+
+[NiceGUI Documentation](https://nicegui.io/)
 
 [Streamlit Documentation](https://docs.streamlit.io/get-started/installation/command-line#install-streamlit-in-your-environment)
