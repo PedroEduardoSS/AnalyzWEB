@@ -2,7 +2,16 @@
 
 ![logo](/assets/Analyzweb-logo.jpeg)
 
-AnalyzWEB is a set of tools based on Streamlit and NiceGUI for data scientists, analysts or anyone who studies or work with Data Science.
+AnalyzWEB is a set of tools based on Streamlit and NiceGUI for data scientists, analysts or anyone who studies or work with Data Science. The purpose of this repository is to share your knowledge and projects.
+
+## How to use
+
+First, it is recommended to fork this repository.
+
+Create a folder, that is your project. Inside you work in any project of data you want to share.
+You can use Streamlit or NiceGUI to build a graphical interface to your data.
+
+Remember to not share confidential data in your projects. Use data from kaggle to practice.
 
 ## Technologies behind
 
@@ -33,7 +42,7 @@ Deactivate virtual env: `deactivate`
 
 Add dependencies: `uv add <dependency_name>`
 
-Run the app: `uv run main.py`
+Read the README.md inside any folder you'd like to work.
 
 ## Documentations
 
