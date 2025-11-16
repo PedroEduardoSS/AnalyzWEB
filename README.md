@@ -1,6 +1,6 @@
 # AnalyzWEB
 
-![](/assets/Analyzweb-logo.jpeg)
+![logo](/assets/Analyzweb-logo.jpeg)
 
 AnalyzWEB is a set of tools based on Streamlit and NiceGUI for data scientists, analysts or anyone who studies or work with Data Science.
 
